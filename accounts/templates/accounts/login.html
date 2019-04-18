@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<br/>
+
+
+<br/>
+
+<h1>LOGIN </h1>
+
+
+<br />
+<form method='POST' action =" {% url 'login' %}" >
+{% csrf_token %}
+Username:
+<br />
+
+<input type= 'text' name= 'Username'>
+<br />
+Password:
+<br />
+
+<input type= 'password' name= 'Password'>
+<br />
+
+<br />
+<br />
+<input class='btn btn-primary' type= 'submit' name= 'login'>
+</form>
+
+<br />
+
+<!-- This displays an Error message on the page if there is an error if the username has been used: -->
+{% if error %}
+
+<font color="red">{{ error }}</font>
+
+{% endif %}
+
+
+<br />
+<br />
+
+<p> If you do not have an account click<a href="{% url 'signup' %}"> Here to Signup</a> </p>
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<br/>
+<div class="container text-center">
+<img src="{% static 'plogo.png' %}">
+<h1>Welcome! Please SIGN UP </h1>
+</div>
+
+<br />
+<form method='POST' action =" {% url 'signup' %}" >
+{% csrf_token %}
+Username:
+<br />
+
+<input type= 'text' name= 'Username'>
+<br />
+Password:
+<br />
+
+<input type= 'password' name= 'Password1'>
+<br />
+Confirm Password:
+<br />
+
+<input type= 'password' name= 'Password2'>
+<br />
+<br />
+<input class='btn btn-primary' type= 'submit' name= 'sign up'>
+</form>
+
+<br />
+
+<!-- This displays an Error message on the page if there is an error: if the username hs been used before -->
+{% if error %}
+
+<font color="red">{{ error }}</font>
+
+{% endif %}
+
+<!-- This displays an Error message on the page if the passwords does not match -->
+{% if error2 %}
+
+<font color="red">{{ error2 }} </font>
+
+{% endif %}
+
+<br />
+<br />
+
+
+
+<p> If you already have an account click here to<a href="{% url 'login' %}"> login </a></p>
+
+
+{% endblock %}

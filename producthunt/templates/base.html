@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>Producthunt Website</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'plogo.png' %}"/>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    	
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'plogo.png' %}" height=44 width = 44>Product Hunt</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <i class="fab fa-instagram">
+          <a class="nav-item nav-link" href="http://instagram.com/ugobozz1/">Instagram </a></i>
+      	
+          <!--To make sure that our users know that they are logged in we make them feel so on the homepage by: -->
+          {% if user.is_authenticated %}
+
+          	<!--we add a javascript code to help us make the logout button work on its own  -->
+          <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+          <!-- becos we are doing a post request instead of a get request ('cause of our chrome browser ) we have to add a hidden form here:  --> 
+
+          <form id="logout" method='POST' action="{% url 'logout' %}">
+          	{% csrf_token %} <!-- for security purpose-->
+          <!-- this below hides the form from view: -->
+          	<input type="hidden" />
+          	
+          </form>
+
+          {% else %}
+
+		<a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a> 
+        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          {% endif %}
+
+        </div>
+      </div>
+  
+    </nav>
+  </header>
+
+  <main role="main">
+
+<div class = 'container'>
+	
+
+{% block content %}
+
+
+{% endblock %}
+
+
+<br/>
+
+</div>
+
+
+  </main>
+
+</body>
+
+
+
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>All Rights Reserved &copy; Ugocode {% now "Y" %} </p>
+
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+  </html>
+
+
