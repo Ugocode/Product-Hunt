@@ -1,5 +1,5 @@
 # Product-Hunt
-This is a site where developers come and place their new inventions 
+This is a site where developers come and showcase their new inventions 
 Then this new invention get reviewd by users who have an account and are logged into the site 
 Its a very good project and I really love how it came out.
 
