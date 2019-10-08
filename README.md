@@ -17,4 +17,4 @@ This is where users of the platform register and sign in to be part of the websi
 
 Product App:
 
-This is where all the products are being uploaded to. 
+This is where all the products to be upvoted are being uploaded to. 
