@@ -16,9 +16,9 @@ So lots of new products are being created by developers daily but they don have 
 
 
 # Project Features 
-What the project contains include :
+This project contains the folloing apps :
 
-### Account App:
+## Account App:
 
 This is where users of the platform register and sign in to be part of the website. when you register and sign in you have the ability to upload your work and upvote other peoples work. 
 
